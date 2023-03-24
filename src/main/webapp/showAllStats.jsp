@@ -15,6 +15,14 @@
             <th>Total amount of used fuel: ${stats.allUsedFuel}</th>
         </tr>
     </table>
+    <form method='get'>
+            <button type="submit" class="button">Show statistics by ID</button>
+                    <select name="id">
+                        <c:forEach items="${allId}" var="id">
+                           <option value="${id}">${id}</option>
+                        </c:forEach>
+                    </select>
+            </form>
       <form method='get' action='http://localhost:8080/Module4'>
               <input type="submit" value="Main page">
       </form>
