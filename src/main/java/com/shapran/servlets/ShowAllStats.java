@@ -23,12 +23,9 @@ public class ShowAllStats extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException {
         final StatsDTO statsDTO = new DetailService().getStats();
-        request.setAttribute("statistics", statsDTO);
+        request.setAttribute("stats", statsDTO);
         final List<String> allId = new DetailService().getAllId();
         request.setAttribute("allId", allId);
-//        request.setAttribute("allPreparedFuel", statsDTO.getAllPreparedFuel());
-//        request.setAttribute("allBrokenMicrochips", statsDTO.getAllBrokenMicrochips());
-//        request.setAttribute("allUsedFuel", statsDTO.getAllUsedFuel());
         request.getRequestDispatcher("showAllStats.jsp").forward(request, response);
     }
 
